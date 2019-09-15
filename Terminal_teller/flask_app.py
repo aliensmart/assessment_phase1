@@ -15,8 +15,9 @@ def accoun_info(api_key):
     account = Account.api_authenticate(api_key)
     
     data = {}
-    data["username"] = account.username
+    
     data["balance"] = account.balance
+    data["username"] = account.username
 
     return jsonify(data)
 

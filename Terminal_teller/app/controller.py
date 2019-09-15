@@ -19,6 +19,8 @@ def run():
         elif choice == '2': # login
             api = view.user_api()
             account = Account.api_authenticate(api)
+            account.api_key = api
+            account.save()
             if not account:
                 view.error()
             else:
@@ -49,8 +51,6 @@ def mainmenu(account):
             api_key = account.get_api()
             view.my_key(api_key)
             account.save()
-
-            
 
         elif choice == '5': # Exit
             view.logout_message()
