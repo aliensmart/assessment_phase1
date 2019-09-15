@@ -48,6 +48,7 @@ def mainmenu(account):
         elif choice == '4': # Get api
             api_key = account.get_api()
             view.my_key(api_key)
+            account.save()
 
             
 
